@@ -1,54 +1,75 @@
-# Remotion video
+# Bubble Sort Animation
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.gif">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+![Bubble Sort Animation](bubble-sort-animation.png)
 
-Welcome to your Remotion project!
+Este projeto utiliza o [Remotion](https://www.remotion.dev/) para criar uma animação visual do algoritmo de ordenação Bubble Sort.
 
-## Commands
+## Instalação
 
-**Install Dependencies**
-
-```console
-npm i
+1. Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/bubble-sort-animation.git
+cd bubble-sort-animation
 ```
 
-**Start Preview**
+2. Instale as dependências:
+```bash
+npm install
+```
 
-```console
+## O Algoritmo
+
+O Bubble Sort é implementado em `src/bubbleSort.ts`. O algoritmo funciona da seguinte forma:
+
+1. Compara pares adjacentes de elementos
+2. Se o elemento da esquerda for maior que o da direita, eles são trocados
+3. Este processo se repete até que o array esteja ordenado
+
+A implementação registra cada passo do algoritmo (comparações e trocas) para criar a animação. O código gera três tipos de passos:
+- `compare`: quando dois elementos estão sendo comparados (amarelo)
+- `swap`: quando dois elementos são trocados (vermelho)
+- `done`: quando o array está ordenado (verde)
+
+## Executando o Projeto
+
+### Iniciar o Remotion Studio
+
+Para visualizar e editar a animação em tempo real:
+
+```bash
 npm run dev
 ```
 
-**Render video**
+Isso abrirá o Remotion Studio no seu navegador (geralmente em http://localhost:3000).
 
-```console
-npx remotion render
+### Gerando o Vídeo
+
+Para renderizar o vídeo final:
+
+```bash
+npm run build
 ```
 
-**Upgrade Remotion**
+O vídeo será gerado na pasta `out/` com o nome `BubbleSort.mp4`.
 
-```console
-npx remotion upgrade
-```
+## Estrutura do Projeto
 
-## Docs
+- `src/bubbleSort.ts`: Implementação do algoritmo e geração dos passos
+- `src/BubbleSortAnimation.tsx`: Componente React que renderiza a animação
+- `src/Root.tsx`: Configuração da composição do vídeo (dimensões, duração, etc.)
 
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
+## Personalização
 
-## Help
+A animação pode ser personalizada editando:
 
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
+- Array inicial: modifique `INITIAL_ARRAY` em `src/bubbleSort.ts`
+- Cores: ajuste o objeto `colors` em `src/BubbleSortAnimation.tsx`
+- Dimensões: altere `barWidth`, `barSpacing` e `maxHeight` em `src/BubbleSortAnimation.tsx`
+- Duração: cada passo leva 1 segundo, controlado pelo `fps` em `src/Root.tsx`
 
-## Issues
+## Detalhes Técnicos
 
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
-
-## License
-
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+- Resolução: 1920x1080 pixels
+- FPS: 30 quadros por segundo
+- Duração: calculada automaticamente baseada no número de passos do algoritmo
+- Formato de saída: MP4
