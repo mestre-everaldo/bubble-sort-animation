@@ -4,6 +4,8 @@
 
 Este projeto utiliza o [Remotion](https://www.remotion.dev/) para criar uma animação visual do algoritmo de ordenação Bubble Sort.
 
+> Projeto criado usando o prompt: [https://grok.com/share/bGVnYWN5_4a9ae7cb-e865-475f-9019-96b765ec1bbf](https://grok.com/share/bGVnYWN5_4a9ae7cb-e865-475f-9019-96b765ec1bbf)
+
 ## Instalação
 
 1. Clone o repositório:
